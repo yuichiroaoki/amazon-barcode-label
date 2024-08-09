@@ -3,6 +3,16 @@ from PIL import Image
 from pdf2image import convert_from_path
 import sys
 
+def show_help_message():
+	print("Usage: python main.py <pdf_filename> <print_start_index> <product_count>")
+	print("Arguments:")
+	print("  <pdf_filename>: Path to the PDF file to convert to images")
+	print("  <print_start_index>: Starting index for printing the labels")
+	print("  <product_count>: Number of labels to print")
+
+if len(sys.argv) != 4:
+	show_help_message()
+	sys.exit(1)
 
 pdf_filename = sys.argv[1]
 print_start_index = int(sys.argv[2])
